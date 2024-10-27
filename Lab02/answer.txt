@@ -1,0 +1,4 @@
+7.
+Chỉ sử dụng accessor methods khi thật sự cần thiết vì các phương thức này tiết lộ thông tin về cách một lớp được triển khai và do đó làm cho mã của bạn khó bảo trì hơn.
+8.
+Có, Java cho phép bạn tạo nhiều constructor cho cùng một lớp, một khái niệm được gọi là quá tải constructor overloading. Mỗi constructor phải có một danh sách tham số duy nhất (về số lượng hoặc loại tham số) để phân biệt chúng.
