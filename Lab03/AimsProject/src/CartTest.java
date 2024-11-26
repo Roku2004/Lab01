@@ -13,13 +13,7 @@ public class CartTest {
 
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Alladin","Animation",18.99f);
         cart.addDigitalVideoDisc(dvd3);
-
-        System.out.println("\n--- Searching by ID ---");
-        cart.SearchById(3);
-
-        System.out.println("\n--- Searching by Title ---");
-        cart.SearchBytitle("Star Wars");
-
+        
         System.out.println("\n--- Printing Cart ---");
         cart.PrintCart();
     }
