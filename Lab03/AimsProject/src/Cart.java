@@ -1,4 +1,3 @@
-package  aimscart;
 import aimsDisc.DigitalVideoDisc;
 
 public class Cart {
@@ -104,5 +103,53 @@ public class Cart {
         }
         return total;
     }
-    
+    //print the list of ordered items of a cart
+    public void PrintCart(){
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:\n");
+        float cost = 0;
+        for(DigitalVideoDisc disc : itemsOrdered){
+            try {
+                System.out.println(disc.toString());
+                cost += disc.getCost();
+            } catch (NullPointerException e) {
+            }
+        }
+        System.out.println("Total cost: " + cost);
+        System.out.println("***************************************************");
+    }
+
+    public void SearchById(int id){
+        boolean found = false;
+        try {
+        for(DigitalVideoDisc disc : itemsOrdered){
+            if(disc.getId() == id){
+                System.out.println("Found by id " + id + ": " + disc.toString());
+                found = true;
+                break;
+            }
+        }
+        } catch (NullPointerException e) {
+        }
+            if(!found){
+                System.out.println("No DVD found with by " + id);
+            }
+    }
+
+    public void SearchBytitle(String title){
+        boolean found = false;
+            try {
+            for(DigitalVideoDisc dvd : itemsOrdered){
+            if(dvd.getTitle() == title){
+                    System.out.println("Found by title " + title + ": " + dvd.toString());
+                    found = true;
+                    break;
+                }
+            }
+            } catch (NullPointerException e) {
+            }
+            if(!found){
+                System.out.println("No DVD found with by " + title);
+            }
+        }
 }
