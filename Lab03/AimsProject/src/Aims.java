@@ -1,4 +1,3 @@
-package aims;
 import aimsDisc.DigitalVideoDisc;
 import aimscart.Cart;
 
