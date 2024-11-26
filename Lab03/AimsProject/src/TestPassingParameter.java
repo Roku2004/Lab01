@@ -1,4 +1,3 @@
-package testdisc;
 import aimsDisc.DigitalVideoDisc;
 
 public class TestPassingParameter {
