@@ -22,5 +22,3 @@ Sử dụng một mảng để hoán đổi tham chiếu thực tế.
 
 -> Java là ngôn ngữ Pass by Value, ngay cả khi làm việc với tham chiếu đối tượng. Tham chiếu được sao chép và truyền vào phương thức, nhưng không thay đổi tham chiếu gốc.
 -> Để hoán đổi hai đối tượng thực sự, cần sử dụng cấu trúc bên ngoài (như mảng) để thay đổi tham chiếu thực tế.
-6.
-Phương thức toString() cho lớp DigitalVideoDisc nên để kiểu trả về là String
