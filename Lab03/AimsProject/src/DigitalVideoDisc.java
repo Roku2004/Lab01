@@ -4,9 +4,24 @@ public class DigitalVideoDisc {
     private String director;
     private int length;
     private float cost;
+    private int id;
+    private static int nbDigitalVideoDisc = 0;
+
+    public DigitalVideoDisc(){
+        
+    }
+
+    public int getId() {
+        return id;
+    }
     public String getTitle() {
         return title;
     }
+    
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getCategory() {
         return category;
     }
@@ -22,26 +37,30 @@ public class DigitalVideoDisc {
 
     public DigitalVideoDisc(String title) {
         super();
+        this.id =++ nbDigitalVideoDisc ;
         this.title = title;
     }
     
-    public DigitalVideoDisc( String category,String title, float cost) {
+    public DigitalVideoDisc(String title,String category, float cost) {
         super();
-        this.category = category;
+        this.id =++ nbDigitalVideoDisc ;
         this.title = title;
+        this.category = category;
         this.cost = cost;
     }
     
-    public DigitalVideoDisc(String director,String title, String category,  float cost) {
+    public DigitalVideoDisc(String title, String category,String director,  float cost) {
         super();
-        this.director = director;
+        this.id =++ nbDigitalVideoDisc ;
         this.title = title;
         this.category = category;
+        this.director = director;
         this.cost = cost;
     }
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         super();
+        this.id =++ nbDigitalVideoDisc ;
         this.title = title;
         this.category = category;
         this.director = director;
@@ -50,12 +69,11 @@ public class DigitalVideoDisc {
     }
 
     public String toString() {
-        return "DigitalVideoDisc{" +
-                "Title='" + title + '\'' +
-                ", Category='" + category + '\'' +
-                ", Director='" + director + '\'' +
-                ", Length=" + length +
-                ", Cost=" + cost +
-                '}';
+        return id + ".DVD - " +
+        title + " - " +
+        category + "- " +
+        director + "- " +
+        length + ": " +
+        cost + "$";
     }
 }
