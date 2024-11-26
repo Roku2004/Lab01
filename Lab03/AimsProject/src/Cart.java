@@ -1,4 +1,3 @@
-package  aimscart;
 import aimsDisc.DigitalVideoDisc;
 
 public class Cart {
