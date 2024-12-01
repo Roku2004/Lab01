@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.logo-login-main{
+    display: flex;
+}
+img{
+    margin: 15px 19px 2px 255px;
+    height: 100px;
+}
+.info{
+    line-height: 0.9;
+}
+h3{
+    margin-top: 27px;
+}
+h2,h3{
+    color:white;
+}
