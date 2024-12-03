@@ -1,0 +1,41 @@
+10.
+Khi ghi đè phương thức equals() của lớp Object, nếu bạn cần ép kiểu tham số obj sang kiểu cụ thể như Media để so sánh các thuộc tính, thì bạn nên kiểm tra xem đối tượng obj có thực sự là một thể hiện (instance) của lớp Media trước khi thực hiện ép kiểu.
+
+Nếu đối tượng truyền vào không phải là một thể hiện của Media (ví dụ: obj không thuộc lớp Media hoặc các lớp con của nó), thì việc ép kiểu sẽ gây ra lỗi thời gian chạy (ClassCastException).
+
+12.
+1)
+- Lớp đại diện cho đối tượng cần sắp xếp, trong trường hợp này là lớp đại diện cho các mục trong giỏ hàng
+
+2)
+- MediaComparatorByTitleCost:
+public int compare(Media m1, Media m2) {
+        // So sánh theo tiêu đề
+        int titleComparison = m1.getTitle().compareTo(m2.getTitle());
+        
+        // Nếu tiêu đề giống nhau, so sánh theo chi phí (chi phí cao hơn ưu tiên trước)
+        if (titleComparison == 0) {
+            return Float.compare(m2.getCost(), m1.getCost());  // So sánh theo chi phí giảm dần
+        }
+        
+        return titleComparison;  // Nếu tiêu đề khác nhau, sắp xếp theo tiêu đề
+    }
+-MediaComparatorByCostTitle:
+public int compare(Media m1, Media m2) {
+        // So sánh theo chi phí (chi phí cao hơn ưu tiên trước)
+        int costComparison = Float.compare(m2.getCost(), m1.getCost());
+        
+        // Nếu chi phí giống nhau, so sánh theo tiêu đề
+        if (costComparison == 0) {
+            return m1.getTitle().compareTo(m2.getTitle());  // So sánh theo tiêu đề (theo thứ tự chữ cái)
+        }
+        
+        return costComparison;  // Nếu chi phí khác nhau, sắp xếp theo chi phí
+    }
+
+3)
+- Không thể có hai quy tắc sắp xếp khác nhau khi chỉ sử dụng giao diện Comparable, vì một lớp chỉ có thể triển khai duy nhất một phương thức compareTo() để xác định thứ tự mặc định.
+
+- Nếu cần sắp xếp theo nhiều quy tắc, bạn cần sử dụng thêm Comparator hoặc các phương pháp khác để linh hoạt hơn.
+
+4) Sử dụng Comparator để áp dụng quy tắc sắp xếp cụ thể cho từng loại phương tiện thay vì chỉ dựa vào Comparable
